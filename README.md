@@ -1,4 +1,4 @@
-# Paint
+# Paint with C++
 Application Paint uses Abstract Factory Design Patterns
 
 User Interface of Paint Application
