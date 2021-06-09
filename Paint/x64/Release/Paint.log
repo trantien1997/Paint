@@ -1,0 +1,22 @@
+﻿  Paint.cpp
+E:\Paint\Paint\Paint.cpp(21,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Paint\Paint\Paint.cpp(286,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Paint\Paint\Paint.cpp(287,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Paint\Paint\Paint.cpp(310,14): warning C4101: 'max': unreferenced local variable
+E:\Paint\Paint\Paint.cpp(310,9): warning C4101: 'min': unreferenced local variable
+E:\Paint\Paint\Paint.cpp(398,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Paint\Paint\Paint.cpp(401,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Paint\Paint\Paint.cpp(417,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Paint\Paint\Paint.cpp(420,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Paint\Paint\Paint.cpp(912,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Paint\Paint\Paint.cpp(919,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Paint\Paint\Paint.cpp(926,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Paint\Paint\Paint.cpp(933,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Paint\Paint\Paint.cpp(985,31): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+E:\Paint\Paint\Paint.cpp(985,37): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  Generating code
+  0 of 380 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Paint.vcxproj -> E:\Paint\x64\Release\Paint.exe
