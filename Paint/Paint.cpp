@@ -655,25 +655,30 @@ void Start()
         if (kbhit())
         {
             yourChoice = getch();
-            if (yourChoice == 97 || yourChoice == 65)
+            yourChoice = make_lowercase(yourChoice);
+            if (yourChoice == add)
             {
                 AddShape();
             }
-            else if (yourChoice == 114 || yourChoice == 82)
+            else if (yourChoice == remove)
             {
                 RemoveShape();
             }
-            else if (yourChoice == 117 || yourChoice == 85)
+            else if (yourChoice == undo)
             {
                 UndoShape();
             }
-            else if (yourChoice == 66 || yourChoice == 98)
+            else if (yourChoice == redo)
             {
                 RedoShape();
             }
-            else if (yourChoice == 77 || yourChoice == 109)
+            else if (yourChoice == modify)
             {
                 ModifyInforOfShape();
+            }
+            else if(yourChoice == Exit)
+            {
+                exit(0);
             }
         }
     }
@@ -790,6 +795,7 @@ string SelectShape()
     char selectShape;
 
     selectShape = getch();
+    selectShape = make_lowercase(selectShape);
     if (selectShape == circle)
     {
         return "SIMPLE";

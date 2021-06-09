@@ -14,16 +14,13 @@
 #include <ctime>
 #pragma warning(disable: 4996)
 
-#define WIDTH   100
-#define HEIGHT  25
-
 #define add    97
-#define remove  114
-#define undo    117
-#define redo    98
-#define print   112
-#define circle  99
-#define Exit    101
+#define remove 114
+#define undo   117
+#define redo   98
+#define modify 109
+#define circle 99
+#define Exit   113
 
 using namespace std;
 

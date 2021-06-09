@@ -1,18 +1,17 @@
 ﻿  Paint.cpp
-E:\Paint\Paint\Paint.cpp(46,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-E:\Paint\Paint\Paint.cpp(287,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-E:\Paint\Paint\Paint.cpp(288,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Paint\Paint\Paint.cpp(311,14): warning C4101: 'max': unreferenced local variable
-E:\Paint\Paint\Paint.cpp(311,9): warning C4101: 'min': unreferenced local variable
-E:\Paint\Paint\Paint.cpp(431,22): warning C4553: '==': result of expression not used; did you intend '='?
-E:\Paint\Paint\Paint.cpp(443,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Paint\Paint\Paint.cpp(446,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Paint\Paint\Paint.cpp(462,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Paint\Paint\Paint.cpp(465,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Paint\Paint\Paint.cpp(889,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Paint\Paint\Paint.cpp(896,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Paint\Paint\Paint.cpp(903,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Paint\Paint\Paint.cpp(910,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Paint\Paint\Paint.cpp(962,31): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-E:\Paint\Paint\Paint.cpp(962,37): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-  Paint.vcxproj -> E:\Paint\x64\Debug\Paint.exe
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(21,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(286,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(287,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(310,14): warning C4101: 'max': unreferenced local variable
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(310,9): warning C4101: 'min': unreferenced local variable
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(398,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(401,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(417,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(420,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(918,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(925,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(932,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(939,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(991,31): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\User\OneDrive\Máy tính\Paint\Paint\Paint.cpp(991,37): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  Paint.vcxproj -> C:\Users\User\OneDrive\Máy tính\Paint\x64\Debug\Paint.exe
