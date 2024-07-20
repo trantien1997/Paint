@@ -1,4 +1,6 @@
 #include "Shape.h"
+#include <vector>
+#include <string>
 
 class Circle : public Shape
 {
@@ -6,22 +8,20 @@ private:
     uint32_t centerX;
     uint32_t centerY;
     uint32_t radius;
+    std::vector<Shape*> arrAddedCircle;
+    std::vector<Shape*> arrRemovedCircle;
+
+	void wrap(uint32_t &minValue, uint32_t &maxValue);
 public:
-		Circle();
+		Circle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius);
 
 		void Add() override;
 
 		void Remove() override;
 
-		void Draw() override;
+		void Draw(Shape *shape) override;
 
-		void Undo(bool flagAdd, bool flagRemove);
-
-		void Redo(bool flagAdd, bool flagRemove);
-
-		void DrawCircle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius);
-
-		void ClearCircle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius);
+		void RevertOperation() override;
 
 		~Circle();
 };

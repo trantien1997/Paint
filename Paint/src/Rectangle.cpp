@@ -45,8 +45,15 @@ void Rectangle::Add() {
     Draw(rec);
 }
 
-void Rectangle::Add(Rectangle *rect) {
+void Rectangle::Add(Shape *shape) {
+    // Save Information of Rectangle Shape
+    arrAddedRectangle.push_back(shape);
 
+    // Save last operation of rectangle
+    lastOperation = Operation::ADD;
+
+    // Draw rectangle to console screen
+    Draw(shape);
 }
 
 void Rectangle::Remove() {
@@ -82,9 +89,9 @@ void Rectangle::Remove() {
     arrRemovedRectangle.push_back(rec);
 }
 
-void Rectangle::Undo() {
+void Rectangle::RevertOperation() {
     if (!arrRemovedRectangle.size() || !arrAddedRectangle.size()) {
-        std::cout << "Nothing to undo!" << std::endl;
+        std::cout << "Nothing to undo or redo" << std::endl;
         return;
     }
 
@@ -93,11 +100,13 @@ void Rectangle::Undo() {
             Remove();
             break;
         case Operation::REMOVE:
-            auto rect = dynamic_cast<Rectangle*>(arrRemovedRectangle.back());
-            Add(rect);
+            auto shape = arrRemovedRectangle.back();
+            Add(shape);
+            // Remove shap from arrRemovedRectangle
+            arrRemovedRectangle.pop_back();
             break;
         default:
-            std::cout << "Cannot undo!" << std::endl;
+            std::cout << "Cannot undo or redo" << std::endl;
             break;
     }
 }

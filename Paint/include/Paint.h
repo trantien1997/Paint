@@ -9,9 +9,10 @@
 #include <fstream>
 #include <string.h>
 #include <sstream>
-#include <Windows.h>
 #include <conio.h>
 #include <ctime>
+#include "Rectangle.h"
+#include "Circle.h"
 
 class Paint
 {

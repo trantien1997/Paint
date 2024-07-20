@@ -11,13 +11,10 @@ private:
     uint32_t centerY;
     uint32_t width;
     uint32_t height;
-    Operation lastOperation;
     std::vector<Shape*> arrAddedRectangle;
     std::vector<Shape*> arrRemovedRectangle;
-    std::vector<Shape*> undoAddRectangle;
-    std::vector<Shape*> undoRemoveRectangle;
 
-    void Add(Rectangle *rect);
+    void Add(Shape *shape);
 
 public:
 		Rectangle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &width, const uint32_t &height);
@@ -28,9 +25,7 @@ public:
 
 		void Draw(Shape *shape) override;
 
-		void Undo() override;
-
-		void Redo() override;
+		void RevertOperation() override;
 
 		~Rectangle();
 };
