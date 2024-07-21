@@ -4,15 +4,36 @@
  *  Copyright � 2021 TranTien. All rights reserved.        *
  ***********************************************************/
 
-#include <iostream>
-#include <vector>
+#pragma once
+
 #include <fstream>
-#include <string.h>
 #include <sstream>
 #include <conio.h>
 #include <ctime>
 #include "Rectangle.h"
 #include "Circle.h"
+#include 
+
+class Factory {
+public:
+	virtual Shape* CreateShape() = 0;
+};
+
+class RobustShapeFactory : public Factory {
+public:
+	Shape* CreateShape() override
+	{
+		return new Rectangle();
+	}
+};
+
+class SimpleShapeFactory : public Factory {
+public:
+	Shape* CreateShape() override
+	{
+		return new Circle();
+	}
+};
 
 class Paint
 {

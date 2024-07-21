@@ -1,3 +1,11 @@
+/***********************************************************
+ *  Shape.h                                                *
+ *  Created by Tien, NguyenTran on 07.20.2024.             *
+ *  Copyright © 2024. All rights reserved.                 *
+ ***********************************************************/
+
+#pragma once
+
 #include <iostream>
 
 enum class Operation

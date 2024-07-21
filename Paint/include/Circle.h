@@ -1,3 +1,11 @@
+/***********************************************************
+ *  Circle.h                                               *
+ *  Created by Tien, NguyenTran on 07.20.2024.             *
+ *  Copyright © 2024. All rights reserved.                 *
+ ***********************************************************/
+
+#pragma once
+
 #include "Shape.h"
 #include <vector>
 #include <string>
@@ -13,6 +21,8 @@ private:
 
 	void wrap(uint32_t &minValue, uint32_t &maxValue);
 public:
+		Circle();
+
 		Circle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius);
 
 		void Add() override;

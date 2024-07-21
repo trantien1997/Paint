@@ -985,22 +985,6 @@ void MappingData(int x, int y, int value)
         arrRectangle[4].height = value;
 }
 
-void gotoxy(int x, int y)
-{
-    HANDLE hConsoleOutput;
-    COORD Cursor_an_Pos = { x - 1,y - 1 };
-    hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(hConsoleOutput, Cursor_an_Pos);
-}
-
-void resizeConsole(int width, int height)
-{
-    HWND console = GetConsoleWindow();
-    RECT r;
-    GetWindowRect(console, &r);
-    MoveWindow(console, r.left, r.top, width, height, TRUE);
-}
-
 void wrap(int& a, int& b)  // only in C++, file .cpp
 {
     int temp = a;
@@ -1019,7 +1003,7 @@ char make_lowercase(char in)
 int main()
 {
     // Resize Width and Height of the Application Window 
-    resizeConsole(1140, 450);
+    WindowApi::resizeConsole(1140, 450);
 
     // Draw interface of the application
     ContourDrawing();

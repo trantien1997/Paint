@@ -1,5 +1,13 @@
+/***********************************************************
+ *  Rectangle.cpp                                          *
+ *  Created by Tien, NguyenTran on 07.20.2024.             *
+ *  Copyright © 2024. All rights reserved.                 *
+ ***********************************************************/
+
 #include "Rectangle.h"
 #include "WindowApi.h"
+
+Rectangle::Rectangle() {}
 
 Rectangle::Rectangle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &width, const uint32_t &height)
 {

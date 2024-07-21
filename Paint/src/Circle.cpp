@@ -1,5 +1,13 @@
+/***********************************************************
+ *  Circle.cpp                                             *
+ *  Created by Tien, NguyenTran on 07.20.2024.             *
+ *  Copyright © 2024. All rights reserved.                 *
+ ***********************************************************/
+
 #include "Circle.h"
 #include "WindowApi.h"
+
+Circle::Circle() {}
 
 Circle::Circle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius) {
     this->centerX = centerX;

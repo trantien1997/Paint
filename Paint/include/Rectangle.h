@@ -1,3 +1,11 @@
+/***********************************************************
+ *  Rectangle.h                                            *
+ *  Created by Tien, NguyenTran on 07.20.2024.             *
+ *  Copyright © 2024. All rights reserved.                 *
+ ***********************************************************/
+
+#pragma once
+
 #include "Shape.h"
 #include <vector>
 #include <string>
@@ -17,6 +25,7 @@ private:
     void Add(Shape *shape);
 
 public:
+        Rectangle();
 		Rectangle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &width, const uint32_t &height);
 
 		void Add() override;
