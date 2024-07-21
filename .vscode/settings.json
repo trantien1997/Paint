@@ -9,5 +9,6 @@
         "initializer_list": "cpp",
         "xstring": "cpp"
     },
-    "cmake.sourceDirectory": "C:/Users/PC/Desktop/C++/Paint"
+    "cmake.sourceDirectory": "C:/Users/PC/Desktop/C++/Paint",
+    "cmake.ignoreCMakeListsMissing": true
 }
