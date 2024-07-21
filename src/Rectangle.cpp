@@ -6,6 +6,7 @@
 
 #include "Rectangle.h"
 #include "WindowApi.h"
+#include <ctime>
 
 Rectangle::Rectangle() {}
 
@@ -103,19 +104,22 @@ void Rectangle::RevertOperation() {
         return;
     }
 
-    switch(lastOperation) {
-        case Operation::ADD:
+    switch (lastOperation) {
+        case Operation::ADD: {
             Remove();
             break;
-        case Operation::REMOVE:
+        }
+        case Operation::REMOVE: {
             auto shape = arrRemovedRectangle.back();
             Add(shape);
-            // Remove shap from arrRemovedRectangle
+            // Remove shape from arrRemovedRectangle
             arrRemovedRectangle.pop_back();
             break;
-        default:
+        }
+        default: {
             std::cout << "Cannot undo or redo" << std::endl;
             break;
+        }
     }
 }
 

@@ -9,10 +9,8 @@
 #include <fstream>
 #include <sstream>
 #include <conio.h>
-#include <ctime>
 #include "Rectangle.h"
 #include "Circle.h"
-#include 
 
 class Factory {
 public:
@@ -33,6 +31,18 @@ public:
 	{
 		return new Circle();
 	}
+};
+
+class Client {
+private:
+	Factory* factory;
+public:
+	Client(Factory* f);
+	void Add();
+	void Draw();
+	Shape* Undo();
+	Shape* Redo();
+	void Remove();
 };
 
 class Paint

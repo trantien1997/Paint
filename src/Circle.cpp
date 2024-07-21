@@ -6,6 +6,7 @@
 
 #include "Circle.h"
 #include "WindowApi.h"
+#include <ctime>
 
 Circle::Circle() {}
 
@@ -22,10 +23,10 @@ void Circle::Add() {
 
     // Rangdom for centerX
     uint32_t minCenterX = 30 + int(radius);
-    uint32_t maxCenterY = 86 - int(radius);
-    if (minCenterX > maxCenterY)
-        wrap(minCenterX, maxCenterY);
-    uint32_t centerX = rand() % (maxCenterY - minCenterX + 1) + minCenterX;
+    uint32_t maxCenterX = 86 - int(radius);
+    if (minCenterX > maxCenterX)
+        wrap(minCenterX, maxCenterX);
+    uint32_t centerX = rand() % (maxCenterX - minCenterX + 1) + minCenterX;
 
     // Rangdom for centerY
     uint32_t minCenterY = 5 + int(radius);
@@ -44,23 +45,15 @@ void Circle::Add() {
     Draw(cir);
 }
 
-void Circle::Draw(Shape *shape) {
-    Circle* cir = dynamic_cast<Circle*>(shape);
-    float pr = 2; // pr is the aspected pixel ratio which is almost equal to 2
-    uint32_t radius = cir->radius;
-    uint32_t centerX = cir->centerX;
-    uint32_t centerY = cir->centerY;
-    for (int positionX = centerX - radius; positionX <= centerX + radius; positionX++) { // loop for horizontal movement1
-        int X = centerX - positionX;
-        for (int positionY = centerY - radius; positionY <= centerY + radius; positionY++) { // loop for vertical movement
-            int Y = centerY - positionY;
-            WindowApi::gotoxy(positionX, positionY);
-            float d = ((Y * pr) * (Y * pr)) / (radius * radius) + (X * X) / (radius * radius); //multiplying the i variable with pr to equalize pixel-width with the height
-            if (d > 0.95 && d < 1.08) { // determining if the point is in the circle
-                std::cout << "*";
-            }
-        }
-    }
+void Circle::Add(Shape *shape) {
+    // Save Information of Rectangle Shape
+    arrAddedCircle.push_back(shape);
+
+    // Save last operation of rectangle
+    lastOperation = Operation::ADD;
+
+    // Draw rectangle to console screen
+    Draw(shape);
 }
 
 void Circle::Remove() {
@@ -96,6 +89,49 @@ void Circle::Remove() {
 
     // Save last operation of circle
     lastOperation = Operation::REMOVE;
+}
+
+void Circle::Draw(Shape *shape) {
+    Circle* cir = dynamic_cast<Circle*>(shape);
+    float pr = 2; // pr is the aspected pixel ratio which is almost equal to 2
+    uint32_t radius = cir->radius;
+    uint32_t centerX = cir->centerX;
+    uint32_t centerY = cir->centerY;
+    for (int positionX = centerX - radius; positionX <= centerX + radius; positionX++) { // loop for horizontal movement1
+        int X = centerX - positionX;
+        for (int positionY = centerY - radius; positionY <= centerY + radius; positionY++) { // loop for vertical movement
+            int Y = centerY - positionY;
+            WindowApi::gotoxy(positionX, positionY);
+            float d = ((Y * pr) * (Y * pr)) / (radius * radius) + (X * X) / (radius * radius); //multiplying the i variable with pr to equalize pixel-width with the height
+            if (d > 0.95 && d < 1.08) { // determining if the point is in the circle
+                std::cout << "*";
+            }
+        }
+    }
+}
+
+void Circle::RevertOperation() {
+    if (!arrAddedCircle.size() || !arrRemovedCircle.size()) {
+        std::cout << "Nothing to undo or redo" << std::endl;
+        return;
+    }
+
+    switch (lastOperation) {
+        case Operation::ADD: {
+            Remove();
+            break;
+        }
+        case Operation::REMOVE: {
+            auto shape = arrRemovedCircle.back();
+            Add(shape);
+            // Remove shape from arrRemovedCircle
+            arrRemovedCircle.pop_back();
+            break;
+        }
+        default: {
+            std::cout << "Cannot undo or redo" << std::endl;
+        }
+    }
 }
 
 void Circle::wrap(uint32_t &minValue, uint32_t &maxValue) {

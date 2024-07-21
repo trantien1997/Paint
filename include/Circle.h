@@ -20,6 +20,7 @@ private:
     std::vector<Shape*> arrRemovedCircle;
 
 	void wrap(uint32_t &minValue, uint32_t &maxValue);
+	void Add(Shape *shape);
 public:
 		Circle();
 
