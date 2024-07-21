@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "limits": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "xiosbase": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "initializer_list": "cpp",
+        "xstring": "cpp"
+    },
+    "cmake.sourceDirectory": "C:/Users/PC/Desktop/C++/Paint"
+}
