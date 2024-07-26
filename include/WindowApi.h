@@ -7,40 +7,52 @@
 #pragma once
 
 #include <Windows.h>
+#include <fstream>
+#include <sstream>
 
-class WindowApi
-{
-public:
-    /**
-     * A function to move the console cursor to the specified coordinates.
-     *
-     * @param x the x-coordinate
-     * @param y the y-coordinate
-     *
-     * @return void
-     *
-     * @throws N/A
-     */
-    static void gotoxy(int x, int y) {
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        COORD pos = {x, y};
-        SetConsoleCursorPosition(hConsole, pos);
-    }
+class WindowApi {
+ public:
+  /**
+   * A function to move the console cursor to the specified coordinates.
+   *
+   * @param x the x-coordinate
+   * @param y the y-coordinate
+   *
+   * @return void
+   *
+   * @throws N/A
+   */
+  static void gotoxy(int x, int y) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD pos = {x, y};
+    SetConsoleCursorPosition(hConsole, pos);
+  }
 
-    /**
-     * A function to resize the console window to the specified width and height.
-     *
-     * @param width the new width of the console window
-     * @param height the new height of the console window
-     *
-     * @return void
-     *
-     * @throws N/A
-     */
-    static void resizeConsole(int width, int height) {
-        HWND console = GetConsoleWindow();
-        RECT r;
-        GetWindowRect(console, &r);
-        MoveWindow(console, r.left, r.top, width, height, TRUE);
+  /**
+   * A function to resize the console window to the specified width and height.
+   *
+   * @param width the new width of the console window
+   * @param height the new height of the console window
+   *
+   * @return void
+   *
+   * @throws N/A
+   */
+  static void resizeConsole(int width, int height) {
+    HWND console = GetConsoleWindow();
+    RECT r;
+    GetWindowRect(console, &r);
+    MoveWindow(console, r.left, r.top, width, height, TRUE);
+  }
+
+  static void ContourDrawing() {
+    std::ifstream fin;
+    std::string line;
+    fin.open("C:/Users/PC/Desktop/C++/Paint/GUI.txt");
+
+    while (fin) {
+      getline(fin, line);
+      std::cout << line << std::endl;
     }
+  }
 };

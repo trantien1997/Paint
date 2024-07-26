@@ -8,6 +8,10 @@ project(paintApp VERSION 1.0.0)
 
 include_directories(include app/include)
 
-add_executable(paintApp app/src/Paint.cpp src/Circle.cpp src/Rectangle.cpp)
+set (SOURCE src/Circle.cpp src/Rectangle.cpp)
+
+add_executable(paintApp 
+               ${SOURCE}
+               app/src/Paint.cpp)
 
 # cmake -G "MinGW Makefiles" -S . -B build

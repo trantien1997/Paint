@@ -7,32 +7,34 @@
 #pragma once
 
 #include "Shape.h"
-#include <vector>
 #include <string>
+#include <vector>
 
-class Circle : public Shape
-{
+
+class Circle : public Shape {
 private:
-    uint32_t centerX;
-    uint32_t centerY;
-    uint32_t radius;
-    std::vector<Shape*> arrAddedCircle;
-    std::vector<Shape*> arrRemovedCircle;
+  uint32_t centerX;
+  uint32_t centerY;
+  uint32_t radius;
+  std::vector<Shape *> arrAddedCircle;
+  std::vector<Shape *> arrRemovedCircle;
 
-	void wrap(uint32_t &minValue, uint32_t &maxValue);
-	void Add(Shape *shape);
+  void wrap(uint32_t &minValue, uint32_t &maxValue);
+  void Add(Shape *shape);
+
 public:
-		Circle();
+  Circle();
 
-		Circle(const uint32_t &centerX, const uint32_t &centerY, const uint32_t &radius);
+  Circle(const uint32_t &centerX, const uint32_t &centerY,
+         const uint32_t &radius);
 
-		void Add() override;
+  void Add() override;
 
-		void Remove() override;
+  void Remove() override;
 
-		void Draw(Shape *shape) override;
+  void Draw(Shape *shape) override;
 
-		void RevertOperation() override;
+  void RevertOperation() override;
 
-		~Circle();
+  ~Circle();
 };
