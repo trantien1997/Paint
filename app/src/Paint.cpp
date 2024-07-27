@@ -5,16 +5,16 @@
  ***********************************************************/
 
 #include "Paint.h"
+
 #include "WindowApi.h"
 
-char App::yourChoice{};
 std::string App::lastShape{};
 
 Client::Client() {}
 
 Client::Client(Factory *f) { Client::factory = f; }
 
-Shape *Client::CreateShape(std::string shapeType) {
+Shape *Client::CreateShape(const std::string &shapeType) {
   if (shapeType == "SIMPLE") {
     factory = new SimpleShapeFactory();
     return factory->CreateShape();
@@ -30,20 +30,30 @@ void App::start() {
   Client *client = new Client();
   while (true) {
     if (kbhit()) {
-      yourChoice = getch();
-      std::cout << "Your choice: " << yourChoice << std::endl;
-      if (yourChoice == 'a') {
-        addShape(client);
-      } else if (yourChoice == 'r') {
-        removeShape(client);
-      } else if (yourChoice == 'u') {
-        undoShape(client);
-      } else if (yourChoice == 're') {
-        redoShape(client);
-      } else if (yourChoice == 'm') {
-        // modifyInforOfShape(client);
-      } else if (yourChoice == 'q') {
-        exit(0);
+      auto yourChoice = convertStringToEnum(std::to_string(getch()), optionMap, Option::UNKNOWN);
+      switch (yourChoice) {
+        case Option::ADD:
+          addShape(client);
+          break;
+        case Option::REMOVE:
+          removeShape(client);
+          break;
+        case Option::UNDO:
+          undoShape(client);
+          break;
+        case Option::REDO:
+          redoShape(client);
+          break;
+        case Option::MODIFY:
+          // TODO: Update later
+          // modifyInforOfShape(client);
+          break;
+        case Option::EXIT:
+          exit(0);
+          break;
+        default:
+          std::cout << "your choice is unknown" << std::endl;
+          break;
       }
     }
   }
@@ -71,6 +81,7 @@ void App::removeShape(Client *client) {
 
 void App::undoShape(Client *client) {
   auto shape = client->CreateShape(lastShape);
+  std::cout << "TIEN DEBUG: call to RevertOperation" << std::endl;
   shape->RevertOperation();
 }
 
@@ -80,12 +91,17 @@ void App::redoShape(Client *client) {
 }
 
 std::string App::selectShape() {
-  yourChoice = getch();
-  std::cout << "shape: " << yourChoice << std::endl;
-  if (yourChoice == 'c') {
-    return "SIMPLE";
-  } else {
-    return "ROBUST";
+  auto shapeType = convertStringToEnum(std::to_string(getch()), shapeMap, ShapeType::UNKNOWN);
+  switch (shapeType) {
+    case ShapeType::CIRCLE:
+      return "SIMPLE";
+      break;
+    case ShapeType::RECTANGLE:
+      return "ROBUST";
+      break;
+    default:
+      return "UNKNOWN";
+      break;
   }
 }
 

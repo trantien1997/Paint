@@ -104,6 +104,8 @@ void Rectangle::Remove() {
 }
 
 void Rectangle::RevertOperation() {
+  std::cout << "The size of arrRemovedRectangle: " << arrRemovedRectangle.size() << std::endl;
+  std::cout << "The size of arrAddedRectangle: " << arrAddedRectangle.size() << std::endl;
   if (!arrRemovedRectangle.size() || !arrAddedRectangle.size()) {
     std::cout << "Nothing to undo or redo" << std::endl;
     return;
